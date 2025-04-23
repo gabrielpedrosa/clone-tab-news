@@ -21,6 +21,7 @@ export default async function migrations(request, response) {
     const pendingMigrations = await migrationRunner(defaultMigrationOptions);
     await dbClient.end();
     response.status(200).json(pendingMigrations);
+    
   }
 
   if(method === "POST") {
